@@ -3,21 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jaiser - Resource Management Game</title>
+    <title>Kingdom - Resource Management Game</title>
     <style>
       body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f4; padding: 20px; }
       h1 { color: #333; }
-      #game { background: white; padding: 20px; border-radius: 10px; width: 300px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+      .game { background: white; padding: 20px; border-radius: 10px; width: 300px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.2); margin-bottom: 20px; }
       button { margin: 5px; padding: 10px; font-size: 16px; cursor: pointer; }
       input { width: 80px; padding: 5px; text-align: center; }
       ul {text-align: left;}
     </style>
   </head>
   <body>
-    <h1>Kaiser - Resource Manager</h1>
-
-    <div id="game">
-      <div>
+    <h1>Kingdom - Resource Manager</h1>
+    <div class="game">
         <h2>How to Play</h2>
         <ul>
           <li>Buy & Sell Land: Manage your territory wisely.</li>
@@ -31,6 +29,8 @@
           <li>Win by reaching 1,000,000 gold or lose if your people die.</li>
         </ul>
       </div>
+    
+    <div class="game">
       <p><b>Year:</b> <span id="year">1500</span></p>
       <p><b>Gold:</b> <span id="gold">1000</span></p>
       <p><b>Land:</b> <span id="land">100</span> acres</p>
@@ -151,6 +151,8 @@
         land += Math.floor(Math.random() * 5);
         gold -= Math.floor(Math.random() * 50);
 
+        //harvest
+        grain = land + Math.floor(land * 0.3)
         if (gold >= 1000000) {
           alert(
             "Congratulations! You have become the richest ruler in history!"
